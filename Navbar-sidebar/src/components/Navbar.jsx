@@ -12,9 +12,6 @@ const Navbar = () => {
   return (
     <nav className='flex items-center justify-between'>
         <a href="#home">Navbar</a>
-        <ul>
-            
-        </ul>
     </nav>
   )
 }
