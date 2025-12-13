@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { CiSearch } from "react-icons/ci";
 import {FaDumbbell} from "react-icons/fa";
 import {MdMenu} from "react-icons/md";
 import {PiShoppingCartThin} from "react-icons/pi";
+import {motion, AnimatePresence} from "framer-motion";
 
 const Navbar2 = () => {
+    const [open, setOpen] = useState(false);
 
     const NavbarMenu = [
         {id:1, title: "Home", link: "/"},
         {id:2, title: "Train", link: "#"},
         {id:3, title: "Program", link: "#"},
         {id:4, title: "Blogs", link: "#"},
-        {id:5, title: "Contact", link: "#"},
+        {id:5, title: "Pricing", link: "#"},
     ];
   return (
     <>
@@ -38,17 +40,53 @@ const Navbar2 = () => {
                     </ul>
                 </div>
                 {/* icons section */}
-                <div>
-                    <button>
-                        <CiSearch className='text-2xl' />
+                <div className='flex items-center gap-4'>
+                    <button className='text-2xl hover:bg-orange-400 hover:text-white rounded-full p-2 duration-200'>
+                        <CiSearch/>
                     </button>
+                    <button className='text-2xl hover:bg-orange-400 hover:text-white rounded-full p-2 duration-200'>
+                        <PiShoppingCartThin />
+                    </button>
+                    <button className='hover:bg-orange-400 text-orange-400 font-semibold hover:text-white rounded-md border-2 border-orange-400 px-6 py-2 duration-200 hidden md:block'>Login</button>
                 </div>
                 {/* Mobile hamburger Menu section */}
+                <div className='md:hidden' onClick={() => setOpen(!open)}>
+                    <MdMenu className='text-4xl' />
+                </div>
             </div>
         </nav>
         {/* Mobile sidebar section */}
+        <ResponsiveMenu open={open} />
     </>
   )
 }
 
-export default Navbar2
+export default Navbar2;
+
+
+const ResponsiveMenu = ({open}) => {
+    return (
+        <AnimatePresence mode="wait">
+            {
+                open && (
+                    <motion.div 
+                        initial={{opacity: 0, y: -100}}
+                        animate={{opacity: 1, y: 0}}
+                        exit={{opacity: 0, y: -100}}
+                        transition={{duration: 0.3}}
+                        className="absolute top-20 left-0 w-full h-screen z-20"
+                    >
+                        <div className='text-xl font-semibold uppercase bg-orange-400 text-white py-10 m-6 rounded-3xl'>
+                            <ul className='flex flex-col items-center justify-center gap-10'>
+                                <li>Home</li>
+                                <li>About</li>
+                                <li>Service</li>
+                                <li>Contact</li>
+                            </ul>
+                        </div>
+                    </motion.div>
+                )
+            }
+        </AnimatePresence>
+    )
+}
