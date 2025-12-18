@@ -46,3 +46,8 @@ body {
     transition: all 0.8s ease;
 }
 
+.content .bread:nth-child(1) {
+    left: 30px;
+    bottom: -5%;
+}
+
