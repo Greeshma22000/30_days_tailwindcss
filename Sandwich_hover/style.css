@@ -1,2 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Kalam&display=swap");
 
+:root {
+    --bread-light: #f5debd;
+    --bread-medium: #e8bf9c;
+    --bread-medium-alt: #f3c8a3;
+    --bread-dark: #e4cdab;
+    --bread-darker: #d4aa87;
+    --bread-gradient-light: #e8bb94;
+    --bread-gradient-dark: #daae88;
+
+    /* lettuce colors */
+    --lettuce-green: #87cc87;
+
+    /* Tomato colors */
+    --tomato-red: #ff4949;
+    --tomato-dark: #ce4845;
+
+    /* cheese colors */
+    --cheese-yellow: #ffe359;
+}
