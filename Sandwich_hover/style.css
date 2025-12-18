@@ -39,3 +39,10 @@ body {
     position: relative;
 }
 
+.content .bread {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    transition: all 0.8s ease;
+}
+
