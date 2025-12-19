@@ -6,9 +6,9 @@ import Navbar from './components/Navbar'
 const App = () => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* <Navbar2 /> */}
-      {/* <Navbar3 /> */}
+      <Navbar3 />
     </div>
   )
 }

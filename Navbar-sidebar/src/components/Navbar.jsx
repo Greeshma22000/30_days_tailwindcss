@@ -12,7 +12,7 @@ const Navbar = () => {
         {id:5, name: 'Progress', link: '#progress'},
     ];
   return (   
-    <nav className='p-5 flex items-center justify-between border shadow-md border-amber-50 '>
+    <nav className='p-5 flex items-center justify-between border border-amber-50 container'>
       {/* logo */}
         <a href="#home" className='flex items-center justify-between w-full text-4xl font-bold italic'>Navbar</a>
         <button className='md:hidden focus:outline-none absolute top-5 right-5 transition-all duration-300 ease-in-out' onClick={() => setIsOpen(!isOpen)}>

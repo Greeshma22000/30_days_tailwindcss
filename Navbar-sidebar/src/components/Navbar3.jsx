@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import {GiHamburgerMenu} from 'react-icons/gi';
-import {RiCloseLargeFill} from 'react-icons/ri';
+import {FiMenu, FiX} from "react-icons/fi";
 
 const Navbar3 = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -12,43 +11,30 @@ const Navbar3 = () => {
         {id:6, title:"Login", link:"#"},
     ];
   return (
-    <div className='relative w-full shadow-md'>
-            <nav className='flex items-center justify-between p-3 z-50 container'>
-            <h1 className='text-4xl font-bold'>Coding</h1>
-            <ul className='hidden md:flex space-x-4 text-xl font-semibold'>
-                {
-                    navLinks.map((link) => (
-                        <li key={link.id}><a href={link.link} className='inline-block py-1 px-3 hover:text-blue-400 transition-all duration-300'>{link.title}</a></li>
-                    ))
-                }
+        <nav className='flex items-center justify-between p-5 border'>
+            <h1 className='md:hidden text-4xl font-bold ml-5'>Coder</h1>
+            <button className='md:hidden focus:outline-none absolute top-5 right-5' onClick={() => setIsOpen(!isOpen)}>
+                <FiMenu className='w-8 h-8' /> 
+            </button>
+            <ul className='gap-6 space-x-8 hidden md:flex'>
+                {navLinks.map((link) => (
+                    <li key={link.id}><a href={link.link} className='text-lg'>{link.title}</a></li>
+                ))}
             </ul>
-
-            <div className='md:hidden cursor-pointer'>
-                {isOpen ? (
-                    <RiCloseLargeFill
-                        size={20}
-                        onClick={() => setIsOpen(!isOpen)}
-                        className='absolute right-0 top-0 mt-4 mr-5'
-                    />
-                ) : (
-                    <GiHamburgerMenu 
-                        size={20}
-                        onClick={() => setIsOpen(!isOpen)}
-                        className='absolute right-0 top-0 mt-4 mr-5'
-                    />
-                )}
-            </div>
-            <div>
-                {isOpen && (
-                <ul className='md:hidden flex flex-col items-center justify-center gap-10 text-xl'>
-                    {navLinks.map((link) => (
-                        <li key={link.id}><a href={link.link} className='block py-1 px-3 hover:text-blue-400 transition-all duration-300'>{link.title}</a></li>
-                    ))}
-                </ul>
-            )}
+            <div className={`${isOpen ? 'block' : 'hidden'} md:hidden bg-orange-900 absolute top-0 left-0 w-full h-screen flex flex-col items-start p-10 justify-center space-y-8 pt-16 text-white`}>
+                <button className='absolute top-5 right-5 transition-all duration-300 ease-in-out' onClick={() => setIsOpen(false)}>
+                    <FiX className='w-8 h-8' />
+                </button>
+                <h1 className='absolute top-20 text-4xl font-bold'>Coder</h1>
+                <ul className='space-y-10'>
+            {navLinks.map((link) => (
+              <li key={link.id}>
+                <a href={link.link} className='text-xl hover:text-blue-500' onClick={() => setIsOpen(false)}>{link.title}</a>
+              </li>
+            ))}
+          </ul>
             </div>
         </nav>
-    </div>
   )
 }
 
