@@ -11,7 +11,7 @@ const Navbar3 = () => {
         {id:6, title:"Login", link:"#"},
     ];
   return (
-        <nav className='flex items-center justify-between p-5 border'>
+        <nav className='flex items-center justify-between p-5'>
             <h1 className='text-4xl font-bold ml-5'>Coder</h1>
             <button className='md:hidden focus:outline-none absolute top-5 right-5' onClick={() => setIsOpen(!isOpen)}>
                 <FiMenu className='w-8 h-8' /> 
