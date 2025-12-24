@@ -1,8 +1,14 @@
 import React from 'react'
+import Navbar from './layout/Navbar'
 
 const App = () => {
   return (
-    <div></div>
+    <div className='min-h-screen overflow-x-hidden'>
+      <Navbar />
+      <main>
+
+      </main>
+    </div>
   )
 }
 
