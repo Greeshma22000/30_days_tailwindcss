@@ -1,16 +1,27 @@
 import React from 'react'
 
-const Navbar = () => {
-  
-  const navLinks = [
+const navLinks = [
     {href: "#about", label: "About"},
     {href: "#projects", label: "Projects"},
     {href: "#experience", label: "Experience"},
     {href: "#testimonials", label: "Testimonials"},
   ];
+
+const Navbar = () => {
   return (
     <header>
-        <nav></nav>
+        <nav>
+          <a href="">
+            PM<span>.</span>
+          </a>
+
+          {/* Desktop Navigation */}
+          <div>
+            <div>
+
+            </div>
+          </div>
+        </nav>
     </header>
   )
 }
