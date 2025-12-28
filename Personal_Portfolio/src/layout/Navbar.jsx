@@ -18,7 +18,9 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div>
             <div>
-
+              {navLinks.map((link, index) => (
+                <a href={link.href} key={index}>{link.label}</a>
+              ))}
             </div>
           </div>
         </nav>
