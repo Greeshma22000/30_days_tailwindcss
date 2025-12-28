@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../components/Button';
 
 const navLinks = [
     {href: "#about", label: "About"},
@@ -34,7 +35,7 @@ const Navbar = () => {
           </div>
 
           <div className='hidden md:block'>
-            
+            <Button>Contact Me</Button>
           </div>
         </nav>
     </header>
