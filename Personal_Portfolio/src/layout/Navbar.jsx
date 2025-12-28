@@ -35,7 +35,7 @@ const Navbar = () => {
           </div>
 
           <div className='hidden md:block'>
-            <Button>Contact Me</Button>
+            <Button size='sm'>Contact Me</Button>
           </div>
         </nav>
     </header>
